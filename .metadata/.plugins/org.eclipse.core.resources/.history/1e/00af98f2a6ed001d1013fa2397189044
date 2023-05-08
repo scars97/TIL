@@ -1,0 +1,28 @@
+package com.example.demo.repository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.example.demo.entity.Member;
+import com.example.demo.entity.Product;
+
+@SpringBootTest
+public class MappingTest {
+
+	@Autowired
+	MemberRepository memberRepository;
+	@Autowired
+	ProductRepository productRepository;
+	
+	private Member setMember() {
+		Member member = new Member();
+		member.setUserName("practice");
+		return member;
+	}
+	
+	private Product setProduct() {
+		Product product = new Product();
+		product.setName("item");
+		return product;
+	}
+}

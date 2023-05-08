@@ -1,0 +1,31 @@
+package com.example.demo.repository;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.example.demo.entity.Member;
+
+@SpringBootTest
+public class MemberRepositoryTest {
+
+	@Autowired
+	MemberRepository memberRepository;
+	
+	@Test
+	public void testMember() {
+		//given
+		Member member = new Member();
+		member.setUserName("practice");
+		Long memberId = memberRepository.save(member);
+		
+		//when
+		Member findMember = memberRepository.findOne(memberId);
+		
+		//then
+		assertThat(findMember.getId()).isEqualTo(member.getId());
+		
+	}
+}

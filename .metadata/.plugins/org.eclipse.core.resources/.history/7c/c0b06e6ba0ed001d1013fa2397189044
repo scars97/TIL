@@ -1,0 +1,24 @@
+package com.example.demo.repository;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.entity.ProductItem;
+
+@Repository
+public class ProductRepository {
+
+	@PersistenceContext
+	private EntityManager em;
+	
+	public void save(ProductItem product) {
+		em.persist(product);
+	}
+	
+	public ProductItem findOne(Long id) {
+		return em.find(ProductItem.class, id);
+	}
+	
+}

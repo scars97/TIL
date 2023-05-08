@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="RepositoryTest" project="relationmapping" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.example.demo.repository.RepositoryTest" time="1.171" displayname="RepositoryTest" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.repository.RepositoryTest]">
+    <testcase name="testProduct" classname="com.example.demo.repository.RepositoryTest" time="1.073" displayname="testProduct()" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.repository.RepositoryTest]/[method:testProduct()]"/>
+    <testcase name="testMember" classname="com.example.demo.repository.RepositoryTest" time="0.096" displayname="testMember()" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.repository.RepositoryTest]/[method:testMember()]"/>
+  </testsuite>
+</testrun>
