@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="MappingTest" project="relationmapping" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.example.demo.repository.MappingTest" time="1.024" displayname="MappingTest" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.repository.MappingTest]">
+    <testcase name="mappingTest" classname="com.example.demo.repository.MappingTest" time="1.024" displayname="mappingTest()" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.repository.MappingTest]/[method:mappingTest()]"/>
+  </testsuite>
+</testrun>

@@ -20,8 +20,6 @@ public class MappingTest {
 	MemberRepository memberRepository;
 	@Autowired
 	ProductRepository productRepository;
-	@Autowired
-	EntityManager em;
 	
 	@Test
 	@Transactional
@@ -30,11 +28,12 @@ public class MappingTest {
 		//given
 		Member member = setMember();
 		Product product = setProduct();
-		Long productId = productRepository.save(product);
-		Product findProduct = productRepository.findOne(productId);
+		Product findProduct = productRepository.findOne(product.getId());
+		//중간테이블에 데이터 넣어주는 코드
 		member.getProducts().add(findProduct);
 		
 		//when
+		System.out.println("중간 테이블 데이터 넣은 쿼리문");
 		Long memberId = memberRepository.save(member);
 		Member findMember = memberRepository.findOne(memberId);
 		
@@ -46,12 +45,14 @@ public class MappingTest {
 	private Member setMember() {
 		Member member = new Member();
 		member.setUserName("practice");
+		memberRepository.save(member);
 		return member;
 	}
 	
 	private Product setProduct() {
 		Product product = new Product();
 		product.setName("item");
+		productRepository.save(product);
 		return product;
 	}
 }

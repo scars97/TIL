@@ -25,10 +25,4 @@ public class Product {
 	
 	private String name;
 	
-	@Builder
-	public Product(String name) {
-		Product.builder()
-			.name(name)
-			.build();
-	}
 }

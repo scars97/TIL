@@ -38,10 +38,4 @@ public class Member {
 			inverseJoinColumns = @JoinColumn(name = "product_id"))
 	private List<Product> products = new ArrayList<>();
 	
-	@Builder
-	public Member(String userName) {
-		Member.builder()
-			.userName(userName)
-			.build();
-	}
 }
