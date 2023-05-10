@@ -1,0 +1,57 @@
+package com.example.demo.repository;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.demo.entity.Member;
+import com.example.demo.entity.Product;
+
+@SpringBootTest
+public class FindMemberProductTest {
+
+	@Autowired
+	MemberRepository memberRepository;
+	@Autowired
+	ProductRepository productRepository;
+	
+	@Test
+	@Transactional
+	@Rollback(false)
+	void find() {
+		//given
+		Member member = setMember();
+		Product product = setProduct();
+		member.getProducts().add(product); // 중간테이블 데이터 넣기. 준영속 상태.
+		Long memberId = memberRepository.save(member); // 영속 상태 만듦.
+		
+		//when
+		Member findMember = memberRepository.findOne(memberId);
+		List<Product> products = findMember.getProducts(); // 객체 그래프 탐색
+		
+		//then
+		for (Product findProduct : products) {
+			System.out.println("product.name = " + findProduct.getName());
+		}
+	}
+	
+	private Member setMember() {
+		Member member = new Member();
+		member.setUserName("practice");
+		memberRepository.save(member);
+		return member;
+	}
+	
+	private Product setProduct() {
+		Product product = new Product();
+		product.setName("item");
+		productRepository.save(product);
+		return product;
+	}
+}

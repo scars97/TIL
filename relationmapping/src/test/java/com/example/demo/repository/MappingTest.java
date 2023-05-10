@@ -33,7 +33,6 @@ public class MappingTest {
 		member.getProducts().add(findProduct);
 		
 		//when
-		System.out.println("중간 테이블 데이터 넣은 쿼리문");
 		Long memberId = memberRepository.save(member);
 		Member findMember = memberRepository.findOne(memberId);
 		

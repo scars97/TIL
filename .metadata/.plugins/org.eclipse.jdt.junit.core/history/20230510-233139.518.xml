@@ -1,15 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="SelectTest" project="relationmapping" tests="1" started="1" failures="1" errors="0" ignored="0">
-  <testsuite name="com.example.demo.repository.SelectTest" time="1.058" displayname="SelectTest" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.repository.SelectTest]">
-    <testcase name="selectMemberProduct" classname="com.example.demo.repository.SelectTest" time="1.058" displayname="selectMemberProduct()" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.repository.SelectTest]/[method:selectMemberProduct()]">
-      <failure>java.lang.AssertionError: &#13;
-Expecting actual:&#13;
-  [com.example.demo.entity.Product@5b657342,&#13;
-    com.example.demo.entity.Product@18c0f025]&#13;
-not to be equal to:&#13;
-  [com.example.demo.entity.Product@5b657342,&#13;
-    com.example.demo.entity.Product@18c0f025]&#13;
-&#13;
-	at com.example.demo.repository.SelectTest.selectMemberProduct(SelectTest.java:40)&#13;
+<?xml version="1.0" encoding="UTF-8"?><testrun name="FindMemberProductTest" project="relationmapping" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.example.demo.repository.FindMemberProductTest" time="0.73" displayname="FindMemberProductTest" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.repository.FindMemberProductTest]">
+    <testcase name="find" classname="com.example.demo.repository.FindMemberProductTest" time="0.73" displayname="find()" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.repository.FindMemberProductTest]/[method:find()]">
+      <error>java.lang.NullPointerException&#13;
+	at com.example.demo.repository.FindMemberProductTest.find(FindMemberProductTest.java:43)&#13;
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
@@ -81,7 +74,7 @@ not to be equal to:&#13;
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:452)&#13;
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)&#13;
 &#13;
-</failure>
+</error>
     </testcase>
   </testsuite>
 </testrun>
