@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="FindMemberProductTest" project="relationmapping" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.example.demo.repository.FindMemberProductTest" time="0.979" displayname="FindMemberProductTest" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.repository.FindMemberProductTest]">
-    <testcase name="find" classname="com.example.demo.repository.FindMemberProductTest" time="0.979" displayname="find()" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.repository.FindMemberProductTest]/[method:find()]"/>
-  </testsuite>
-</testrun>

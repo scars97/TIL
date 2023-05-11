@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,13 +30,10 @@ public class Member {
 	@Column(name = "member_id")
 	private Long id;
 	
-	private String userName;
+	private String name;
 	
 	//단방향 매핑
-	@ManyToMany
-	@JoinTable(name = "member_product",
-			joinColumns = @JoinColumn(name = "member_id"),
-			inverseJoinColumns = @JoinColumn(name = "product_id"))
-	private List<Product> products = new ArrayList<Product>();
+	@OneToMany(mappedBy = "member")
+	private List<Product> products = new ArrayList<>();
 	
 }
