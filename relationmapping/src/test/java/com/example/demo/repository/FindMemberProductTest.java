@@ -34,7 +34,7 @@ public class FindMemberProductTest {
 	    productA.setName("상품A");
 	    productRepository.save(productA);
 	    Member member1 = new Member();
-	    member1.setUserName("회원1");
+	    member1.setName("회원1");
 	    member1.getProducts().add(productA); // 연관관계 설정
 	    memberRepository.save(member1);
 		

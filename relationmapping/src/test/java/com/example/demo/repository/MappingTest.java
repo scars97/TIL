@@ -43,7 +43,7 @@ public class MappingTest {
 	
 	private Member setMember() {
 		Member member = new Member();
-		member.setUserName("practice");
+		member.setName("practice");
 		memberRepository.save(member);
 		return member;
 	}

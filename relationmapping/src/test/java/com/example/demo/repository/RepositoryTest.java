@@ -30,7 +30,7 @@ public class RepositoryTest {
 	public void testMember() {
 		//given
 		Member member = new Member();
-		member.setUserName("practice");
+		member.setName("practice");
 		Long memberId = memberRepository.save(member);
 		
 		//when
