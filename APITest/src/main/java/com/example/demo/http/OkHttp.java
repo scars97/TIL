@@ -1,6 +1,9 @@
 package com.example.demo.http;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -13,8 +16,8 @@ import okhttp3.Response;
 @Service
 public class OkHttp {
 	
-	public static void main(String[] args) {
-	
+	public String ApiConnection() {
+		
 		try {
 			OkHttpClient client = new OkHttpClient();
 	
@@ -26,37 +29,39 @@ public class OkHttp {
 					.build();
 	
 			Response response = client.newCall(request).execute();
-			
+		
 			String result = response.body().string();
 			
-			JSONObject json = new JSONObject(result);
+			return result;
 			
-			JSONArray responseJson = json.getJSONArray("response");
-			JSONObject intJson = (JSONObject) responseJson.get(0);
-			JSONObject leagueJson = (JSONObject) intJson.get("league");//league 선택
-			JSONArray standingsJson = (JSONArray) leagueJson.get("standings");//standings 배열
-			JSONArray intJson2 = (JSONArray) standingsJson.get(0);
-			JSONObject intJson3 = (JSONObject) intJson2.get(0);
-			JSONObject teamJson = intJson3.getJSONObject("team");
-			JSONObject allJson = intJson3.getJSONObject("all");
-
-			String logo = (String) teamJson.get("logo");
-			String name = (String) teamJson.get("name");
-			int played = (int) allJson.get("played");
-			int points = (int) intJson3.get("points");
-			int win = (int) allJson.get("win");
-			int draw = (int) allJson.get("draw");
-			int lose = (int) allJson.get("lose");
-			System.out.println("Logo : " + logo + "\n" +
-							   "Team : " + name + "\n" +
-							   "Played : " + played + "\n" +
-							   "Points : " + points+ "\n" +
-							   "Win : " + win + "\n" +
-							   "Draw : " + draw + "\n" +
-							   "Lose : " + lose);
-						
 		}catch(IOException e) {
 			e.printStackTrace();
-		}			
+		}
+		
+		return null;
+	}
+	
+	public List<PremierLeagueDto> premierLeagueDtos(String result){
+	
+		JSONObject json = new JSONObject(result);
+			
+		JSONArray responseJson = json.getJSONArray("response");
+		JSONObject intJson = (JSONObject) responseJson.get(0);
+		JSONObject leagueJson = (JSONObject) intJson.get("league");//league 선택
+		JSONArray standingsJson = (JSONArray) leagueJson.get("standings");//standings 배열
+		JSONArray intJson2 = (JSONArray) standingsJson.get(0);
+			
+		List<PremierLeagueDto> plDatas = new ArrayList<>();
+		//PL 구단 순위
+		for (int i = 0; i < intJson2.length(); i++) {
+			JSONObject intJson3 = (JSONObject) intJson2.get(i); // 순위,팀점수
+			JSONObject teamJson = intJson3.getJSONObject("team"); // 팀명,팀로고
+			JSONObject allJson = intJson3.getJSONObject("all"); // 경기수,성적
+				
+			PremierLeagueDto preDto = new PremierLeagueDto(intJson3, teamJson, allJson);
+			plDatas.add(preDto);
+		}
+			
+		return plDatas; 
 	}
 }
