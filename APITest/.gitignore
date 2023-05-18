@@ -34,3 +34,4 @@ build/
 
 ### API KEY ###
 .properties
+application-API-KEY.properties
