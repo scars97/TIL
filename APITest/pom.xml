@@ -41,12 +41,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- AsyncHttp -->
+		<!-- AsyncHttp
 		<dependency>
 			<groupId>org.asynchttpclient</groupId>
 			<artifactId>async-http-client</artifactId>
 			<version>3.0.0.Beta2</version>
-		</dependency>
+		</dependency>-->
 		<!-- OkHttp-->
 		<dependency>
 			<groupId>com.squareup.okhttp3</groupId>
@@ -58,14 +58,14 @@
 			<artifactId>unirest-java</artifactId>
 			<version>1.4.9</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpasyncclient</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpmime</artifactId>
-		</dependency>
+		</dependency>-->
 		<!-- Swagger -->
 		<dependency>
 			<groupId>io.springfox</groupId>

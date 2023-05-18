@@ -2,11 +2,11 @@ package com.example.demo.http;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import okhttp3.OkHttpClient;
@@ -16,6 +16,9 @@ import okhttp3.Response;
 @Service
 public class OkHttp {
 	
+	@Autowired
+	APIkey apiKey;
+	
 	public String ApiConnection() {
 		
 		try {
@@ -24,7 +27,7 @@ public class OkHttp {
 			Request request = new Request.Builder()
 					.url("https://api-football-v1.p.rapidapi.com/v3/standings?league=39&season=2022")
 					.get()
-					.addHeader("X-RapidAPI-Key", "00dff05ec1msh5a3fcefada34491p12c058jsn7a0d02c8ef99")
+					.addHeader("X-RapidAPI-Key", apiKey.getApiKey())
 					.addHeader("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com")
 					.build();
 	
