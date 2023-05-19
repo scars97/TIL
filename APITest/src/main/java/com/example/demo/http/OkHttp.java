@@ -7,41 +7,34 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-@Service
+@Component
 public class OkHttp {
 	
 	@Autowired
 	APIkey apiKey;
 	
-	public String ApiConnection() {
+	public String ApiConnection() throws IOException {
 		
-		try {
-			OkHttpClient client = new OkHttpClient();
+		OkHttpClient client = new OkHttpClient();
 	
-			Request request = new Request.Builder()
-					.url("https://api-football-v1.p.rapidapi.com/v3/standings?league=39&season=2022")
-					.get()
-					.addHeader("X-RapidAPI-Key", apiKey.getApiKey())
-					.addHeader("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com")
-					.build();
+		Request request = new Request.Builder()
+				.url("https://api-football-v1.p.rapidapi.com/v3/standings?league=39&season=2022")
+				.get()
+				.addHeader("X-RapidAPI-Key", apiKey.getApiKey())
+				.addHeader("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com")
+				.build();
 	
-			Response response = client.newCall(request).execute();
+		Response response = client.newCall(request).execute();
 		
-			String result = response.body().string();
+		return response.body().string();
 			
-			return result;
-			
-		}catch(IOException e) {
-			e.printStackTrace();
-		}
-		
-		return null;
 	}
 	
 	public List<PremierLeagueDto> premierLeagueDtos(String result){

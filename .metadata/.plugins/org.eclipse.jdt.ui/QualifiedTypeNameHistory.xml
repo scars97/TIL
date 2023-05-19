@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.squareup.okhttp.Request"/>
-    <fullyQualifiedTypeName name="com.squareup.okhttp.Response"/>
-    <fullyQualifiedTypeName name="okhttp3.OkHttpClient"/>
-    <fullyQualifiedTypeName name="okhttp3.Request"/>
-    <fullyQualifiedTypeName name="okhttp3.Response"/>
     <fullyQualifiedTypeName name="org.aspectj.lang.reflect.CatchClauseSignature"/>
     <fullyQualifiedTypeName name="com.mashape.unirest.http.Unirest"/>
     <fullyQualifiedTypeName name="com.mashape.unirest.http.HttpResponse"/>
-    <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="java.net.http.HttpRequest"/>
     <fullyQualifiedTypeName name="java.net.http.HttpResponse"/>
     <fullyQualifiedTypeName name="java.net.http.HttpClient"/>
@@ -37,12 +31,10 @@
     <fullyQualifiedTypeName name="com.example.demo.service.RestTemplateService"/>
     <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="com.example.demo.http.HttpController"/>
     <fullyQualifiedTypeName name="com.example.demo.http.AsyncHttp"/>
     <fullyQualifiedTypeName name="okhttp3.ResponseBody"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
     <fullyQualifiedTypeName name="springfox.documentation.swagger2.annotations.EnableSwagger2"/>
     <fullyQualifiedTypeName name="org.json.JSONArray"/>
     <fullyQualifiedTypeName name="org.apache.tomcat.util.json.JSONParser"/>
@@ -52,12 +44,20 @@
     <fullyQualifiedTypeName name="com.example.demo.http.PremierLeagueDto.PremierLeagueDtoBuilder"/>
     <fullyQualifiedTypeName name="com.example.demo.http.OkHttp"/>
     <fullyQualifiedTypeName name="org.json.JSONObject"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="com.example.demo.http.PremierLeagueDto"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
     <fullyQualifiedTypeName name="lombok.Getter"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="java.net.URL"/>
+    <fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="com.example.demo.http.APIkey"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="com.example.demo.http.UrlConnection"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.example.demo.http.PremierLeagueDto"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.PropertySource"/>
 </qualifiedTypeNameHistroy>

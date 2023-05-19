@@ -4,19 +4,15 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class UrlConnection {
 
-	@Autowired
-	APIkey apiKey;
-	
+
 	public void Connection() {
 		
 		try {
 			
-			URL url = new URL("https://api-football-v1.p.rapidapi.com/v3/standings?league=39&season=2022&X-RapidAPI-Key="
-			+ apiKey.getApiKey());
+			URL url = new URL("https://api-football-v1.p.rapidapi.com/v3/standings?league=39&season=2022");
 		
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 					
@@ -33,12 +29,4 @@ public class UrlConnection {
 	}
 }
 
-class test{
-	
-	public static void main(String[] args) {
-		UrlConnection url = new UrlConnection();
-		
-		url.Connection();
-	}
-}
 
