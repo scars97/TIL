@@ -30,7 +30,7 @@ public class RestTemplateService {
 				.path("/api/v1/crud-api/{name}")
 				.encode()
 				.build()
-				.expand("Flature")//복수의 값을 넣어야할 경우 , 를 추가하여 구분
+				.expand("James")//복수의 값을 넣어야할 경우 , 를 추가하여 구분
 				.toUri();
 		
 		RestTemplate restTemplate = new RestTemplate();
